@@ -165,13 +165,10 @@
 <script>
 	var service = $.cookie("service");
 	$('#currentservice').text(service);
-	
-	if (service == 'YouTube') {
-	$('body').append('<script src="js/yt.js"><' + '/' + 'script>');
-} else if  (service == 'Amazon') {
-	$('body').append('<script src="js/amzn.js"><' + '/' + 'script>');
+	if (!!$.cookie('service')) {
+	$('body').append('<script src="js/' + service + '.js"><' + '/' + 'script>');
 } else {
-	$('body').append('<script src="js/yt.js"><' + '/' + 'script>');
+	$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
 }
 	</script>
 
