@@ -1,0 +1,23 @@
+{
+  "name": "trenta-movies",
+  "version": "0.0.1",
+  "description": "Movie app for Trenta OS",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "movies",
+    "trentaos"
+  ],
+  "author": "Trenta.io",
+  "license": "Proprietary",
+  "devDependencies": {
+    "electron": "^9.0.0"
+  },
+  "dependencies": {
+    "@getstation/electron-google-oauth2": "^2.1.0",
+    "electron-packager": "^14.2.1"
+  }
+}
