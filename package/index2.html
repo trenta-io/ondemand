@@ -158,73 +158,7 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.4.0/json2html.min.js"></script>
-<script type="text/javascript">
-			var data;
-			$.getJSON("https://kevdoy.github.io/onDemand//data/hero.json", function (json) {
-				data = json;
-				var transform = {
-					"<>": "a", "href":"https://www.youtube.com/watch?v=${movieid}", "onclick":"_blank", "html": [
-						{
-							"<>": "img", "src": "https://img.youtube.com/vi/${movieid}/maxresdefault.jpg", "class": "img-fluid", "alt":"${movietitle}"
-								
-								}
-							]
 
-				};
-				$(function () {
-
-					//Create the list
-					$('#hero').json2html(data, transform);
-				});
-			});
-
-		</script>
-<script type="text/javascript">
-			var data;
-			$.getJSON("https://kevdoy.github.io/onDemand/data/popular.json", function (json) {
-				data = json;
-				var transform = {
-					"<>": "div", "class": "col-3 featured", "html": [
-						{
-							"<>": "a", "href":"https://www.youtube.com/watch?v=${movieid}", "html": [
-								{
-									"<>": "img", "src": "https://img.youtube.com/vi/${movieid}/hqdefault.jpg", "class": "img-fluid", "alt":"${movietitle}" }	
-									]
-								}
-							]
-
-				};
-				$(function () {
-
-					//Create the list
-					$('#featured').json2html(data, transform);
-				});
-			});
-
-		</script>
-<script type="text/javascript">
-			var data;
-			$.getJSON("https://kevdoy.github.io/onDemand/data/topselling.json", function (json) {
-				data = json;
-				var transform = {
-					"<>": "div", "class": "col-4 topseller", "html": [
-						{
-							"<>": "a", "href":"https://www.youtube.com/watch?v=${movieid}", "html": [
-								{
-									"<>": "img", "src": "https://img.youtube.com/vi/${movieid}/hqdefault.jpg", "class": "img-fluid", "alt":"${movietitle}" }	
-									]
-								}
-							]
-
-				};
-				$(function () {
-
-					//Create the list
-					$('#topselling').json2html(data, transform);
-				});
-			});
-
-		</script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie-1.4.1.min.js"></script>
 </body>
@@ -232,12 +166,14 @@
 	var service = $.cookie("service");
 	$('#currentservice').text(service);
 	
-	if (service == 'YouTube' || null) {
-	$.getScript('js/yt.js', function()
-{
-
-})
-	};
+	if (service == 'YouTube') {
+	$('body').append('<script src="js/yt.js"><' + '/' + 'script>');
+} else if  (service == 'Amazon') {
+	$('body').append('<script src="js/amzn.js"><' + '/' + 'script>');
+} else {
+	$('body').append('<script src="js/yt.js"><' + '/' + 'script>');
+}
 	</script>
+
 
 </html>
