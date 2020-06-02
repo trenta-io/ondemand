@@ -37,7 +37,7 @@ img:hover {
 
 .categoryselect {
 	background: rgb(201,206,215);
-background: linear-gradient(122deg, rgba(201,206,215,1) 0%, rgba(219,224,231,1) 100%);
+background: linear-gradient(to bottom, rgba(201,206,215,1) 0%, rgba(219,224,231,1) 100%);
 }
 .categoryselect a, .categoryselect a:hover {
 	color: #6d768e;
