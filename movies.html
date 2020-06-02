@@ -51,6 +51,7 @@
 					<div class="col text-center">
 						<a href="#" class="py-1 px-4 mx-1 rounded-pill selected">Movies</a>
 						<a href="#" class="py-1 px-4 mx-1 rounded-pill">TV Shows</a>
+						<a href="https://www.youtube.com/feed/storefront?bp=kgEDCMkEogUCKAQ%3D" id="library" class="py-1 px-4 mx-1 rounded-pill">Purchases</a>
 					</div>
 				</div>
 				
@@ -63,9 +64,7 @@
 					<div class="col ">
 						<h1>Movies</h1>
 					</div>
-					<div class="col text-right">
-						<a href="https://www.youtube.com/feed/storefront?bp=kgEDCMkEogUCKAQ%3D" class="btn rounded-pill mt-1 btn-outline-primary">Purchases</a>
-					</div>
+					
 				</div>
 				<div class="row">
 					<div class="col line"></div>
@@ -181,6 +180,12 @@
 } else {
 	$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
 }
+	if (service === "Amazon") {
+		$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/ref=atv_mstff_yvl_tab");
+	}
+	else {
+		
+	}
 	</script>
 	<script>
 	 function processAjaxData(response, urlPath){
