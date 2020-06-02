@@ -46,8 +46,8 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<section>
-			<div class="container-fluid categoryselect">
-				<div class="row py-3">
+			<div class="container-fluid">
+				<div class="row py-3 categoryselect">
 					<div class="col text-center">
 						<a href="#" class="py-1 px-4 mx-1 rounded-pill selected">Movies</a>
 						<a href="#" class="py-1 px-4 mx-1 rounded-pill">TV Shows</a>
@@ -128,8 +128,9 @@
         </button>
       </div>
       <div class="modal-body">
-       <a href="#" data-dismiss="modal" aria-label="Close" class="countryselect"><i class="united states flag"></i> United States of America</a>
-		<br><i><small>More Countries coming later.</small></i>
+       <a href="#" data-dismiss="modal" aria-label="Close" class="countryselect" onclick="$.cookie('country', 'united states');location.reload();" ><i class="united states flag"></i> United States of America</a><br>
+       <a href="#" data-dismiss="modal" aria-label="Close" class="countryselect" onclick="$.cookie('country', 'germany');location.reload();" ><i class="germany flag"></i> Deutschland</a>
+		<br><i><small>More countries coming later.</small></i>
       </div>
 
     </div>
@@ -173,19 +174,35 @@
 <script src="js/jquery.cookie-1.4.1.min.js"></script>
 </body>
 <script>
+	
 	var service = $.cookie("service");
+	var country = $.cookie("country");
+	if (!!$.cookie('country')) {
+	$('#currentflag').attr("class", country + " flag");
+	} else {
+	$.cookie('country', 'united states');
+	location.reload();	
+	};
+	if (!!$.cookie('country')) {
+		if (country === 'united states') {
+			if (!!$.cookie('service')) {
+				$('body').append('<script src="js/' + service + '.js"><' + '/' + 'script>');
+			} else {
+				$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
+			};
+			if (service === "Amazon") {
+				$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/movie/");
+			};
+		} else if (country === 'germany') {
+			if (!!$.cookie('service')) {
+				$('body').append('<script src="js/' + service + + '-de' + '.js"><' + '/' + 'script>');
+			} else {
+				$('body').append('<script src="js/YouTube-de.js"><' + '/' + 'script>');
+			};
+		};
+	};
 	$('#currentservice').text(service);
-	if (!!$.cookie('service')) {
-	$('body').append('<script src="js/' + service + '.js"><' + '/' + 'script>');
-} else {
-	$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
-}
-	if (service === "Amazon") {
-		$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/movie/");
-	}
-	else {
-		
-	}
+	
 	</script>
 
 
