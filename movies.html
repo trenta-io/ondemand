@@ -204,6 +204,9 @@
 			} else {
 				$('body').append('<script src="js/YouTube-de.js"><' + '/' + 'script>');
 			};
+			if (service === "Amazon") {
+				$('#library').attr("href", "https://www.amazon.de/gp/video/mystuff/library/movie/");
+			};
 		};
 	};
 	$('#currentservice').text(service);
