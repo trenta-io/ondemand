@@ -49,8 +49,8 @@
 			<div class="container-fluid">
 				<div class="row py-3 categoryselect">
 					<div class="col text-center">
-						<a href="#" class="py-1 px-4 mx-1 rounded-pill selected">Movies</a>
-						<a href="#" class="py-1 px-4 mx-1 rounded-pill">TV Shows</a>
+						<a href="#" class="py-1 px-4 mx-1 rounded-pill selected" id="nav-movie">Movies</a>
+						<a href="#" class="py-1 px-4 mx-1 rounded-pill" id="nav-tv">TV Shows</a>
 						<a href="https://www.youtube.com/feed/storefront?bp=kgEDCMkEogUCKAQ%3D" id="library" class="py-1 px-4 mx-1 rounded-pill">Purchases</a>
 					</div>
 				</div>
@@ -62,7 +62,7 @@
 			<div class="container">
 				<div class="row headline">
 					<div class="col ">
-						<h1>Movies</h1>
+						<h1 id="title-movie">Movies</h1>
 					</div>
 					
 				</div>
@@ -86,7 +86,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<h4>Popular This Week</h4>
+						<h4 id="title-popular">Popular This Week</h4>
 					</div>
 				</div>
 				<div class="row mt-3" id="featured">
@@ -100,7 +100,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<h4>Top Selling</h4>
+						<h4 id="title-top">Top Selling</h4>
 					</div>
 				</div>
 				<div class="row mt-3" id="topselling">
@@ -194,6 +194,11 @@
 				$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/movie/");
 			};
 		} else if (country === 'germany') {
+			$('#nav-movie').text('Filme');
+			$('#nav-tv').text('Serien');
+			$('#library').text('Meine Filme');
+			$('#title-movie').text('Filme');
+			$('#title-popular').text('Beliebt in dieser Woche');
 			if (!!$.cookie('service')) {
 				$('body').append('<script src="js/' + service + '-de' + '.js"><' + '/' + 'script>');
 			} else {
