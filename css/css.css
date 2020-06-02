@@ -35,6 +35,23 @@ img:hover {
 	text-decoration: none;
 }
 
+.categoryselect {
+	background: rgb(201,206,215);
+background: linear-gradient(122deg, rgba(201,206,215,1) 0%, rgba(219,224,231,1) 100%);
+}
+.categoryselect a, .categoryselect a:hover {
+	color: #6d768e;
+	text-decoration: none;
+}
+.categoryselect a:hover {
+	background: #e1e4e9;
+}
+.categoryselect .selected, .categoryselect .selected {
+	background: #6d768e!important;
+	color: #fff!important;
+}
+
+
 /* DARK MODE */
 @media (prefers-color-scheme: dark) {
 	body {

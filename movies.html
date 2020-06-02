@@ -45,6 +45,17 @@
 	</nav>-->
 	<!-- Wrapper -->
 	<div id="wrapper">
+		<section>
+			<div class="container-fluid categoryselect">
+				<div class="row py-3">
+					<div class="col text-center">
+						<a href="#" class="py-1 px-4 mx-1 rounded-pill selected">Movies</a>
+						<a href="#" class="py-1 px-4 mx-1 rounded-pill">TV Shows</a>
+					</div>
+				</div>
+				
+			</div>
+		</section>
 		<!-- Category Heading -->
 		<section>
 			<div class="container">
@@ -170,6 +181,13 @@
 } else {
 	$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
 }
+	</script>
+	<script>
+	 function processAjaxData(response, urlPath){
+     document.getElementById("content").innerHTML = response.html;
+     document.title = response.pageTitle;
+     window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
+ }
 	</script>
 
 
