@@ -181,19 +181,13 @@
 	$('body').append('<script src="js/YouTube.js"><' + '/' + 'script>');
 }
 	if (service === "Amazon") {
-		$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/ref=atv_mstff_yvl_tab");
+		$('#library').attr("href", "https://www.amazon.com/gp/video/mystuff/library/movie/");
 	}
 	else {
 		
 	}
 	</script>
-	<script>
-	 function processAjaxData(response, urlPath){
-     document.getElementById("content").innerHTML = response.html;
-     document.title = response.pageTitle;
-     window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
- }
-	</script>
+
 
 
 </html>
