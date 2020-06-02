@@ -1,6 +1,6 @@
 // JavaScript Document
 	var data;
-			$.getJSON("https://ondemand.trenta.io/data/hero.json", function (json) {
+			$.getJSON("https://ondemand.trenta.io/data/germany/hero.json", function (json) {
 				data = json;
 				var transform = {
 					"<>": "a", "href":"https://www.youtube.com/watch?v=${movieid}", "html": [
@@ -18,7 +18,7 @@
 				});
 			});
 
-			$.getJSON("https://ondemand.trenta.io/data/popular.json", function (json) {
+			$.getJSON("https://ondemand.trenta.io/data/germany/popular.json", function (json) {
 				data = json;
 				var transform = {
 					"<>": "div", "class": "col-3 featured", "html": [
@@ -40,7 +40,7 @@
 
 
 		
-			$.getJSON("https://ondemand.trenta.io/data/topselling.json", function (json) {
+			$.getJSON("https://ondemand.trenta.io/data/germany/topselling.json", function (json) {
 				data = json;
 				var transform = {
 					"<>": "div", "class": "col-4 topseller", "html": [
