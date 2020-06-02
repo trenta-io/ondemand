@@ -52,7 +52,7 @@ background: linear-gradient(to bottom, rgba(201,206,215,1) 0%, rgba(219,224,231,
 }
 
 
-/* DARK MODE */
+/* DARK MODE 
 @media (prefers-color-scheme: dark) {
 	body {
 		background: #19171a;
@@ -63,4 +63,4 @@ background: linear-gradient(to bottom, rgba(201,206,215,1) 0%, rgba(219,224,231,
 	.line {
 	border-bottom: 1px solid #433e44;
 	}
-}
+} */
