@@ -14,7 +14,7 @@
   "author": "Trenta.io",
   "license": "Proprietary",
   "devDependencies": {
-    "electron": "^9.0.0"
+    "electron": "^18.3.7"
   },
   "dependencies": {
     "@getstation/electron-google-oauth2": "^2.1.0",
